@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Page
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url 'newpage' %}" method="post">
+        {% csrf_token %}
+        <h4 style="padding-bottom: 10px ;
+        font-size: 66px;
+        border-bottom: 1px solid #ededed;
+        margin-bottom: 20px;">Create new page:</h4>
+        <h6 style="font-size: 24px;margin-left:30px;margin-top:25px;">Title:</h6>
+        {{post.title}}
+        <h6 style="font-size: 24px;margin-left:30px;margin-top:25px;">Content:</h6>
+        {{post.content}}
+        <br>
+        <input style="color: white; background-color:#007FFF; padding: 10px; border-radius: 5px; outline:none;" type="submit" value="Submit">
+    </form>
+
+{% endblock %}
